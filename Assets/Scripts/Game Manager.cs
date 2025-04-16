@@ -12,7 +12,12 @@ public class GameManager : MonoBehaviour
         } else {
             Instance = this;
         }
-        
+    }
+
+    public void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Pause();
+        }
     }
 
     public void GameOver() {
@@ -28,4 +33,26 @@ public class GameManager : MonoBehaviour
     public void Restart() {
         SceneManager.LoadScene("Game");
     }
+
+    public void Pause() {
+        if (UIController.Instance.pausePanel.activeSelf == false && UIController.Instance.gameOverPanel.activeSelf == false) {
+            UIController.Instance.pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        } else {
+            UIController.Instance.pausePanel.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
+
+    public void GoToMainMenu(){
+        SceneManager.LoadScene("Main Menu");
+    }
+
+
+
+
 }

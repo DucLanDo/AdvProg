@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2240624224909071104}
   m_Layer: 7
   m_Name: enemy1_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1901018667162150979}
   rb: {fileID: 2128061455632859996}
-  moveSpeed: 0.5
+  moveSpeed: 1.5
+  destroyEffect: {fileID: 8830555592904865127, guid: b5bd3544c34a41e4fa50b81661d2a25a, type: 3}
 --- !u!50 &2128061455632859996
 Rigidbody2D:
   serializedVersion: 5

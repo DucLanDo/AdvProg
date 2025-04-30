@@ -5,6 +5,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public string loggedInUsername;
 
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -51,6 +52,15 @@ public class GameManager : MonoBehaviour
     public void GoToMainMenu(){
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void ShowRegisterPanel(){
+        UIController.Instance.registerPanel.SetActive(true);
+    }
+
+    public void CloseRegisterPanel(){
+        UIController.Instance.registerPanel.SetActive(false);
+    }
+
 
 
 

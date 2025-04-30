@@ -1,0 +1,17 @@
+cd C:\Program Files\Unity\Unity Projects\AdvProg Version Control\AdvProg\FlaskBackend
+
+docker build -t DucLanDo/flaskbackend:1.0 .
+# Baut das Docker-Image aus dem Dockerfile
+
+docker run -p 5000:5000 DucLanDo/flaskbackend:1.0
+# Startet das Image und leitet Port 5000 vom Container → Host weiter
+
+
+docker ps
+docker stop <container_id>
+# Stoppt den laufenden Container
+
+docker images
+
+# image löschen id oder direkt mit tag
+docker rmi <IMAGE_ID>

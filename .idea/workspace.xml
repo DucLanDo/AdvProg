@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea0bb3f1-c427-4b3c-b49f-569767b69c0f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FlaskBackend/.dockerignore.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskBackend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskBackend/dockercommands" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DockerFile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskBackend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskBackend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskBackend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskBackend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +137,7 @@
       <workItem from="1745987766039" duration="177000" />
       <workItem from="1745987945445" duration="94000" />
       <workItem from="1745988051223" duration="303000" />
-      <workItem from="1745988519379" duration="1472000" />
+      <workItem from="1745988519379" duration="2999000" />
     </task>
     <servers />
   </component>
@@ -146,6 +146,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonProject2$main.coverage" NAME="main Coverage Results" MODIFIED="1745986515554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdvProgBackend$main.coverage" NAME="main Coverage Results" MODIFIED="1745989622109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FlaskBackend" />
+    <SUITE FILE_PATH="coverage/AdvProgBackend$main.coverage" NAME="main Coverage Results" MODIFIED="1745991091578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FlaskBackend" />
   </component>
 </project>

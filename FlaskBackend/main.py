@@ -7,7 +7,8 @@ CORS(app)  # Erlaubt Anfragen von Unity
 
 # Verbindung zur MySQL-Datenbank
 db_config = {
-    'host': 'localhost',
+    'host': 'host.docker.internal',
+    #'host': 'localhost',
     'user': 'root',
     'password': 'mysqlpassword',
     'database': 'advprog'

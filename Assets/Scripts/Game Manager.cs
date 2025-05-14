@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,20 +10,25 @@ public class GameManager : MonoBehaviour
     public float gameTime;
     public bool gameActive;
 
+    public int score = 0;
+
 
     void Awake() {
         if (Instance != null && Instance != this) {
             Destroy(this);
         } else {
             Instance = this;
+
         }
     }
 
     void Start() {
         gameActive = true;
+        loggedInUsername = PlayerPrefs.GetString("username");
     }
 
     public void Update(){
+
         if (gameActive) {
             gameTime += Time.deltaTime;
             UIController.Instance.UpdateTimer(gameTime);
@@ -37,6 +43,7 @@ public class GameManager : MonoBehaviour
     public void GameOver() {
         gameActive = false;
         StartCoroutine(ShowGameOverScreen());
+        SubmitScoreToServer(loggedInUsername, score); 
         
     }
 
@@ -47,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart() {
         SceneManager.LoadScene("Game");
+        score = 0;
     }
 
     public void Pause() {
@@ -61,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame(){
         Application.Quit();
+        PlayerPrefs.DeleteKey("username");
     }
 
     public void GoToMainMenu(){
@@ -73,6 +82,37 @@ public class GameManager : MonoBehaviour
 
     public void CloseRegisterPanel(){
         UIController.Instance.registerPanel.SetActive(false);
+    }
+
+    public void AddPoints(int amount) {
+        score += amount;
+        UIController.Instance.UpdateScoreText(score);
+    }
+
+    public void SubmitScoreToServer(string username, int score) {
+        StartCoroutine(SubmitScoreCoroutine(username, score));
+    }
+
+    
+    IEnumerator SubmitScoreCoroutine(string username, int score)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("username", username);
+        form.AddField("score", score);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:5000/submit_score", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Score erfolgreich an Server gesendet!");
+            }
+            else
+            {
+                Debug.LogError("Fehler beim Score-Upload: " + www.error);
+            }
+        }
     }
 
 

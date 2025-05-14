@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public Vector3 playerMoveDirection;
     public float playerMaxHealth;
     public float playerHealth;
+    private bool isImmune;
+    [SerializeField] private float immunityDuration;  
+    [SerializeField] private float immunityTimer;  
 
     void Start() {
         playerHealth = playerMaxHealth;
@@ -42,21 +45,32 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("moving",true);
         }
 
+        if (immunityTimer > 0) {
+            immunityTimer -= Time.deltaTime;
+        } else {
+            isImmune = false;
+        }
+
     
         
     }
 
     void FixedUpdate(){
-        rb.linearVelocity = new Vector2(playerMoveDirection.x * moveSpeed, playerMoveDirection.y * moveSpeed);
+        rb.linearVelocity = new Vector3(playerMoveDirection.x * moveSpeed, playerMoveDirection.y * moveSpeed);
     }
 
     public void TakeDamage(float damage) {
-        playerHealth -= damage;
-        UIController.Instance.UpdateHealthSlider();
-        if (playerHealth <= 0) {
-            gameObject.SetActive(false);
-            GameManager.Instance.GameOver();
+        if (!isImmune) {
+            isImmune = true;
+            immunityTimer = immunityDuration;
+            playerHealth -= damage;
+            UIController.Instance.UpdateHealthSlider();
+            if (playerHealth <= 0) {
+                gameObject.SetActive(false);
+                GameManager.Instance.GameOver();
+            }
         }
+
     }
 
 }

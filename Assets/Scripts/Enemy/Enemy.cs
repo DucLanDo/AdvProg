@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float damage;
+    [SerializeField] private float health;
     [SerializeField] private GameObject destroyEffect;
     private Vector3 direction;
 
@@ -30,9 +32,18 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            PlayerController.Instance.TakeDamage(1);
+            PlayerController.Instance.TakeDamage(damage);
+
+        }
+    }
+
+    public void TakeDamage(float damage){
+        health -= damage;
+        DamageNumberController.Instance.CreateNumber(damage, transform.position);
+        if (health <= 0) {
             Destroy(gameObject);
             Instantiate(destroyEffect, transform.position, transform.rotation);
+            GameManager.Instance.AddPoints(1);
         }
     }
 }

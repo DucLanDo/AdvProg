@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
         [SerializeField] private Slider playerHealthSlider;
         [SerializeField] private TMP_Text healthText;
         [SerializeField] private TMP_Text timerText;
+        [SerializeField] private TMP_Text scoreText;
 
         public GameObject gameOverPanel;
         public GameObject pausePanel;
@@ -15,6 +16,8 @@ public class UIController : MonoBehaviour
         public GameObject loginPanel;
         public GameObject registerPanel;
         public TextMeshProUGUI usernameDisplay;
+        
+   
 
 
      
@@ -35,8 +38,13 @@ public class UIController : MonoBehaviour
         }
 
         public void ShowLoggedInUser() {
-            usernameDisplay.text = "Logged in as: " + GameManager.Instance.loggedInUsername;
+            usernameDisplay.text = "Logged in as: " +  PlayerPrefs.GetString("username");;
         }
+
+        public void UpdateScoreText(int score)
+            {
+                scoreText.text = "Score: " + score;
+            }
 
         public void UpdateTimer(float timer) {
             float min = Mathf.FloorToInt(timer / 60f);

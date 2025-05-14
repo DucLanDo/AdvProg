@@ -69,7 +69,9 @@ public class LoginManager : MonoBehaviour
                     messageText.text = "Login erfolgreich!";
                     GameManager.Instance.loggedInUsername = username;  
                     UIController.Instance.loginPanel.SetActive(false);
+                    PlayerPrefs.SetString("username", username);
                     UIController.Instance.ShowLoggedInUser();
+
                 }
                 else
                 {

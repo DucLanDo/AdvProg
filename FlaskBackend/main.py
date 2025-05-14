@@ -7,8 +7,8 @@ CORS(app)  # Erlaubt Anfragen von Unity
 
 # Verbindung zur MySQL-Datenbank
 db_config = {
-    'host': 'host.docker.internal',
-    #'host': 'localhost',
+    #'host': 'host.docker.internal',
+    'host': 'localhost',
     'user': 'root',
     'password': 'mysqlpassword',
     'database': 'advprog'
@@ -55,6 +55,26 @@ def login():
         return jsonify({'status': 'ok'})
     else:
         return jsonify({'status': 'fail'})
+
+@app.route('/submit_score', methods=['POST'])
+def submit_score():
+    username = request.form['username']
+    score = request.form['score']
+
+    try:
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "INSERT INTO scores (username, score) VALUES (%s, %s)",
+            (username, score)
+        )
+        conn.commit()
+        conn.close()
+        return jsonify({'status': 'ok'})
+    except Exception as e:
+        print("Fehler beim Speichern des Scores:", e)
+        return jsonify({'status': 'fail', 'error': str(e)})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

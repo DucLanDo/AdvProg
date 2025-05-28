@@ -87,6 +87,15 @@ public class PlayerController : MonoBehaviour
     public void GetExperience(int experienceToGet) {
         experience +=experienceToGet;
         UIController.Instance.UpdateExpericenceSlider();
+        if (experience >= playerLevels[currentLevel -1]) {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp(){
+        experience -= playerLevels[currentLevel -1];
+        currentLevel++;
+        UIController.Instance.UpdateExpericenceSlider();
     }
 
 }

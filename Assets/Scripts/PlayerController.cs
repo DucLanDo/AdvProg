@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public int currentLevel;
     public int maxLevel;
     public List<int> playerLevels;
+    public Weapon activeWeapon;
     [SerializeField] private float immunityDuration;  
     [SerializeField] private float immunityTimer;  
 
@@ -96,6 +97,9 @@ public class PlayerController : MonoBehaviour
         experience -= playerLevels[currentLevel -1];
         currentLevel++;
         UIController.Instance.UpdateExpericenceSlider();
+        UIController.Instance.levelUpButtons[0].ActivateButton(activeWeapon);
+        UIController.Instance.levelUpPanelOpen();
+
     }
 
 }

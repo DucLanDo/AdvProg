@@ -9,19 +9,19 @@ public class LevelUpButton : MonoBehaviour
     public TMP_Text weaponDescription;
     public Image weaponIcon;
 
-    private Weapon assignedWepon;
+    private Weapon assignedWeapon;
 
     public void ActivateButton(Weapon weapon){
         weaponName.text = weapon.name;
         weaponDescription.text = weapon.stats[weapon.weaponLevel].description;
         weaponIcon.sprite = weapon.weaponImage;
 
-        assignedWepon = weapon;
+        assignedWeapon = weapon;
 
     }
 
     public void SelectUpgrade(){
-        assignedWepon.LevelUp();
+        assignedWeapon.LevelUp();
         UIController.Instance.levelUpPanelClose();
 
 

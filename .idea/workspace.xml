@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ea0bb3f1-c427-4b3c-b49f-569767b69c0f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/enemy1_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/enemy1_0.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Manager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/LevelUpButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/LevelUpButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskBackend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskBackend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "level-up-screen",
+    "git-widget-placeholder": "weapon-stats",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Program Files/Unity/Unity Projects/AdvProg Version Control/AdvProg",
     "node.js.detected.package.eslint": "true",
@@ -150,6 +153,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonProject2$main.coverage" NAME="main Coverage Results" MODIFIED="1745986515554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdvProgBackend$main.coverage" NAME="main Coverage Results" MODIFIED="1747205192121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FlaskBackend" />
+    <SUITE FILE_PATH="coverage/AdvProgBackend$main.coverage" NAME="main Coverage Results" MODIFIED="1748410625167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FlaskBackend" />
   </component>
 </project>

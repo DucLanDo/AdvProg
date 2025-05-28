@@ -19,7 +19,15 @@ public class UIController : MonoBehaviour
 
         public GameObject loginPanel;
         public GameObject registerPanel;
+        public GameObject leaderboardPanel;
         public TextMeshProUGUI usernameDisplay;
+        [SerializeField] private TMP_Text leaderboardTextField;
+
+        public TMP_Text rawLeaderboardText;
+        public TMP_Text leaderboardPosText;
+        public TMP_Text leaderboardNameText;
+        public TMP_Text leaderboardScoreText;
+
         
    
 
@@ -72,7 +80,9 @@ public class UIController : MonoBehaviour
             levelUpPanel.SetActive(false);
             Time.timeScale = 1;
         }
-    
+
+        //leaderboard
 
 
 }
+

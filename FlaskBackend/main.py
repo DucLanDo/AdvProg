@@ -76,5 +76,18 @@ def submit_score():
         print("Fehler beim Speichern des Scores:", e)
         return jsonify({'status': 'fail', 'error': str(e)})
 
+@app.route("/all_scores")
+def all_scores():
+    conn = mysql.connector.connect(**db_config)
+    cursor = conn.cursor()
+    cursor.execute("SELECT username, score FROM scores ORDER BY score DESC")
+    results = cursor.fetchall()
+    conn.close()
+
+    return jsonify([
+        {"username": row[0], "score": row[1]} for row in results
+    ])
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
